@@ -100,7 +100,7 @@ Después de haber seguido los pasos anteriores, ya puedes ejecutar el **backend*
 - Para el **frontend** con **Node.js**, ejecuta el siguiente comando:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
 Esto debería poner en marcha tanto el servidor del **backend** como el del **frontend**, y podrás acceder a la aplicación en tu navegador.
