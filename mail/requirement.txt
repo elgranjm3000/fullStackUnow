@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+email
+pydantic
+pydantic[email]
+request
