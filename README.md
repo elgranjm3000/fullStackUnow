@@ -14,7 +14,7 @@ Este documento describe cómo configurar y ejecutar el proyecto utilizando Docke
 En el directorio raíz del proyecto, ejecutar el siguiente comando para construir la imagen de Docker:
 
 ```bash
-docker-compose --build
+docker compose --build
 ```
 
 ### 2. Levantar los contenedores
@@ -22,7 +22,7 @@ docker-compose --build
 Una vez construida la imagen, puedes levantar los contenedores ejecutando:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 ### 3. Ejecutar los comandos dentro del contenedor
