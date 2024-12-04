@@ -85,7 +85,7 @@ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' con
 
 ```
 
-- Para ingresar a base de dato y lo que se almacenado ingrese al siguiente enlace
+- Para ingresar a base de dato y visualizar lo que se almacenado ingrese al siguiente enlace
 
 [http://localhost:8081](http://localhost:8081)
 
