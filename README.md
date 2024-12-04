@@ -76,7 +76,7 @@ python3 Test.py # Ejemplo de prueba unitaria
 - Asegúrate de que todos los servicios estén corriendo correctamente con `docker-compose up`.
 - Si necesitas detener los contenedores, puedes hacerlo con `docker-compose down`.
 
-- Si deseas saber la ip de tu contenedor ejecuta lo siguiente
+- Si deseas saber la ip de tu contenedor ejecuta lo siguiente, es necesario para configurar el servidor de correo
 
 ```bash
 docker ps
