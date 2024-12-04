@@ -2,14 +2,19 @@
 namespace App\Service;
 
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 class ExternalApi
 {
     private HttpClientInterface $client;
+    private $params;
 
-    public function __construct(HttpClientInterface $client)
+
+
+    public function __construct(HttpClientInterface $client,ParameterBagInterface $params)
     {
         $this->client = $client;
+        $this->params = $params;
     }
 
     public function getDataFromApi(): array
@@ -21,7 +26,9 @@ class ExternalApi
 
     public function postEmailToApi(array $data): array
 {
-    $url = 'http://172.28.0.4:8082/emailempleado';    
+    $emailData = $this->params->get('ip_email_server');
+
+    $url = "{$emailData}/emailempleado";    
     $response = $this->client->request('POST', $url, [
         'json' => $data        
     ]);   

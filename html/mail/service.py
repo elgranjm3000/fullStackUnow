@@ -4,13 +4,17 @@ from pydantic import BaseModel, EmailStr
 import smtplib
 from email.mime.text import MIMEText
 import uvicorn
+from dotenv import load_dotenv
+import os
 
 
 app = FastAPI()
 
 ##COLOCAR LA IP DE TU CONTENEDOR
 if __name__ == "__main__":
-    uvicorn.run("service:app", host="172.28.0.4", port=8082, reload=True)
+    load_dotenv()
+    ip_email_server = os.getenv('IP_EMAIL_SERVER')
+    uvicorn.run("service:app", host=f"{ip_email_server}", port=8082, reload=True)
 
 class Employee(BaseModel):
     name: str
@@ -20,10 +24,15 @@ class Employee(BaseModel):
 
 
 def send_welcome_email(employee: Employee):
-    sender_email = "CONFIGURAR SU SERVICIO EMAIL"
-    sender_password = "PASSWORD DE SERVICIO EMAIL"
-    smtp_server = "SERVIDOR EMAIL"
-    smtp_port = 587
+    load_dotenv()
+    sender_email = os.getenv('sender_email')
+    sender_password = os.getenv('sender_password')
+    smtp_server = os.getenv('smtp_server')
+    smtp_port = os.getenv('smtp_port')
+    sender_email = f"{sender_email}"
+    sender_password = f"{sender_password}"
+    smtp_server = f"{smtp_server}"
+    smtp_port = f"{smtp_port}"
 
     subject = "¡Bienvenido a la compañia!"
     body = f"Hola {employee.name},\n\n¡Bienvenido al equipo! .\n\nUNOW,\nCompany Team"

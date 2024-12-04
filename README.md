@@ -88,6 +88,23 @@ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' Web
 
 ```
 
+- Con la ip que obtenga, modificar el archivo .env de backend en la variable
+
+```bash
+IP_EMAIL_SERVER=http://ip_obtenida_del_contenedor:8082
+```
+
+y en la carpeta mail ubicar tambien el archivo .env y modificar
+```bash
+IP_EMAIL_SERVER=ip_obtenida_del_contenedor
+###CONFIGURA TU SERVICIO EMAIL
+sender_email = "CORREO DEL SERVICIO EMAIL"
+sender_password = "PASSWOR DEL SERVICIO EMAIL"
+smtp_server = "TU_SERVIDOR EMAIL"
+smtp_port = TU_PUERTO EMAIL
+```
+
+
 - Para ingresar a base de dato y visualizar lo que se almacenado ingrese al siguiente enlace
 
 [http://localhost:8081](http://localhost:8081)

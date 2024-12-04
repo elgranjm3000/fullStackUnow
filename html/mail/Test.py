@@ -1,12 +1,16 @@
 import unittest
 import requests
 import json
-
+from dotenv import load_dotenv
+import os
 class TestEmpleadoAPI(unittest.TestCase):
-
-    BASE_URL = "http://172.28.0.4/backend/public/index.php/api/empleado"  # URL de tu backend Symfony
-    LOGIN_URL = "http://172.28.0.4/backend/public/index.php/login"  # URL del endpoint de login
     
+    load_dotenv()
+    ip_email_server = os.getenv('IP_EMAIL_SERVER')
+
+    BASE_URL = f"http://{ip_email_server}/backend/public/index.php/api/empleado"
+    LOGIN_URL = f"http://{ip_email_server}/backend/public/index.php/login"  
+
     def setUp(self):
         self.credentials = {
             'username': 'elgranjm',  

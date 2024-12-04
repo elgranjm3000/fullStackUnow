@@ -10,16 +10,20 @@ use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 use App\Service\ExternalApi;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 
 
 class EmpleadoController extends AbstractController
 {
     private ExternalApi $externalApi;
+    private $params;
 
-    public function __construct(ExternalApi $externalApi)
+    public function __construct(ExternalApi $externalApi,ParameterBagInterface $params)
     {
         $this->externalApi = $externalApi;
+        $this->params = $params;
+
     }
     
      #[Route("/api/empleado", name:"register_empleado", methods:["POST"])]
