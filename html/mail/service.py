@@ -5,10 +5,10 @@ import smtplib
 from email.mime.text import MIMEText
 import uvicorn
 
-# Create the FastAPI app
+
 app = FastAPI()
 
-
+##COLOCAR LA IP DE TU CONTENEDOR
 if __name__ == "__main__":
     uvicorn.run("service:app", host="172.28.0.4", port=8082, reload=True)
 
@@ -20,9 +20,9 @@ class Employee(BaseModel):
 
 
 def send_welcome_email(employee: Employee):
-    sender_email = "2f59437cf6b5fd"
-    sender_password = "fc264a03397c7b"
-    smtp_server = "sandbox.smtp.mailtrap.io"
+    sender_email = "CONFIGURAR SU SERVICIO EMAIL"
+    sender_password = "PASSWORD DE SERVICIO EMAIL"
+    smtp_server = "SERVIDOR EMAIL"
     smtp_port = 587
 
     subject = "¡Bienvenido a la compañia!"
