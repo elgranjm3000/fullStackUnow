@@ -27,10 +27,10 @@ docker compose up -d
 
 ### 3. Ejecutar los comandos dentro del contenedor
 
-Una vez que los contenedores están corriendo, ingresa al contenedor de `unow-www`:
+Una vez que los contenedores están corriendo, ingresa al contenedor de `WebUnow`:
 
 ```bash
-docker exec -it unow-www bash
+docker exec -it WebUnow bash
 ```
 
 ### 4. Configuración del Backend (Symfony)
@@ -40,6 +40,8 @@ Dentro del contenedor, navega al directorio `backend` y ejecuta los siguientes c
 ```bash
 cd backend
 composer install
+php bin/console doctrine:database:create
+php bin/console make:migration
 php bin/console doctrine:fixtures:load
 ```
 
@@ -60,7 +62,8 @@ clave: 123456
 
 ### 6. Configuración de Mail (Python)
 
-Navega al directorio `mail` y ejecuta los siguientes comandos para configurar el entorno virtual de Python:
+Navega al directorio `mail` y ephp bin/console doctrine:migrations:migrate
+jecuta los siguientes comandos para configurar el entorno virtual de Python:
 
 ```bash
 cd mail
