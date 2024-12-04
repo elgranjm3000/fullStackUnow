@@ -84,7 +84,7 @@ python3 Test.py # Ejemplo de prueba unitaria
 ```bash
 docker ps
 
-docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_id
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' WebUnow
 
 ```
 
