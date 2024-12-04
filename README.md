@@ -67,9 +67,21 @@ cd mail
 python3 -m venv venv
 source venv/bin/activate
 pip3 install -r requirements.txt
+python3 service.py #ejecuta servidor de correo
+python3 Test.py # Ejemplo de prueba unitaria
 ```
 
 ## Notas adicionales
 
 - Asegúrate de que todos los servicios estén corriendo correctamente con `docker-compose up`.
 - Si necesitas detener los contenedores, puedes hacerlo con `docker-compose down`.
+
+- Si deseas saber la ip de tu contenedor ejecuta lo siguiente
+
+```bash
+docker ps
+
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_id
+
+```
+
