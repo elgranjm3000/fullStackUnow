@@ -46,22 +46,6 @@ RUN chown -R www-data:www-data /usr/share/phpmyadmin
 # Copiar configuraciones adicionales (si es necesario)
 COPY ./000-default.conf /etc/apache2/sites-available/000-default.conf
 
-WORKDIR /var/www/html
-
-# Instalar dependencias del backend
-COPY ./html/backend /var/www/html/backend
-WORKDIR /var/www/html/backend
-RUN composer install
-
-# Instalar dependencias del frontend
-COPY ./html/frontend /var/www/html/
-WORKDIR /frontend
-RUN npm install
-
-COPY ./html/mail /var/www/html/
-WORKDIR /mail
-RUN python3 -m venv venv
-
 # Volver al directorio raíz
 WORKDIR /var/www/html
 

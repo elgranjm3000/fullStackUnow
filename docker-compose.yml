@@ -28,8 +28,8 @@ services:
     environment:
       PMA_HOST: db  
       PMA_PORT: 3306
-      PMA_USER: user
-      PMA_PASSWORD: user_password
+      PMA_USER: root
+      PMA_PASSWORD: root_password
       MYSQL_ROOT_PASSWORD: root_password     
       UPLOAD_LIMIT: 512M
       MEMORY_LIMIT: 512M
