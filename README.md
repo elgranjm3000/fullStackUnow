@@ -1,7 +1,7 @@
 
 # Guía de Instalación y Configuración
 
-Este documento describe cómo configurar y ejecutar el proyecto utilizando Docker, Composer, Node.js y un entorno virtual de Python.
+Este documento describe cómo configurar y ejecutar el proyecto utilizando Docker, Composer, React y un entorno virtual de Python con servidor de correo y pruebas unitarias.
 
 ## Requisitos previos
 
